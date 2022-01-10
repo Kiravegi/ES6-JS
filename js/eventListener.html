@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  
+
+
+</head>
+
+<body>
+ 
+ 
+ <button id = "b1" >click here!</button>
+<p id = "p1"></p>
+
+<p id = "p2"></p>
+
+
+
+<script>
+  
+  var b1 = document.getElementById('b1');
+  var p1 = document.getElementById('p1');
+  var p2 = document.getElementById('p2');
+
+  b1.addEventListener('click', (event) => {
+    p1.textContent = "HAHAHAHA"
+  });
+
+  b1.addEventListener('click',{
+    handleEvent:function(event){
+      console.log(event)
+      p2.textContent = JSON.stringify(event);
+    }
+  });
+  </script>
+</body>
+
+</html>

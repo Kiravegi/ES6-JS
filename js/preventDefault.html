@@ -1,0 +1,25 @@
+<html>
+    <head>
+       
+    </head>
+
+    <body>
+        <h2> Events: Prevent Default -- JS</h2>
+        <a href="http://www.google.co.in" id='glink' > Google Home Page  </a>
+
+        <p>
+            Enable Link: <input type="checkbox" id='cb'> 
+        </p>
+
+        <script>
+            const link = document.getElementById('glink');
+            const cb = document.getElementById('cb');
+
+            link.addEventListener('click', function(e){
+                if(!cb.checked){
+                    e.preventDefault();
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <body>
+
+        <div>
+
+        </div>
+
+
+
+        <script>
+            const body = document.body
+
+            const di = document.createElement('div')
+            
+
+            // // div.innerText = "hello"
+            // di.textContent = "hellos"
+            // body.append(di)
+
+            const div = document.querySelector("div")
+
+            console.log(div.textContent) //returns exactly given in html div tag
+            console.log(div.innerText)  //returns what's printed in output browser
+
+
+            div.innerHTML = "<strong>Hello People</strong>"
+
+        </script>
+    </body>
+</html>
+
+

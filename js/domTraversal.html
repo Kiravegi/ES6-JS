@@ -1,0 +1,100 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+    <div class="gp" style="background-color: rgb(182, 145, 145) ;" id="gpId">
+        <h1>GP</h1>
+        <div class="parent">
+            <h2>P1</h2>
+            <div class="child">p1 CH1 </div>
+            <div class="child">p1 CH2 </div>
+        </div>
+        <div class="parent">
+            <h2>P2</h2>
+            <div class="child" id="child1p2">p2 CH1 </div>
+            <div class="child">p2 CH2 </div>
+        </div>
+
+        <ul>
+        <li>getElementById
+        <li>getElementsByClassName
+        <li>QuerySelector
+        <li>querySelectorAll
+        <li>Selecting Children
+        <li>Selecting Descendants
+        <li>Selecting Parents
+        <li>Selecting Ancestors
+        <li>nextElementSibling
+        <li>previousElementSibling
+            </ul>
+    </div>
+
+    <script>
+
+
+
+        const gpI = document.getElementById('gpId')
+        const P = Array.from(document.getElementsByClassName('parent'))
+
+        const qP = document.querySelector(".parent") //selection uses css selector (./#)
+        // const qP = document.querySelectorAll(".parent")
+        bgQp = (element) => element.style.backgroundColor = 'gray'
+
+
+        // gpI.style.backgroundColor = "lightblue"
+
+        bgP = (element) => element.style.backgroundColor = 'lightgreen'
+
+        P.forEach(bgP)
+
+        bgCo = (element) => {
+            element.style.backgroundColor = 'pink';
+        }
+        bgCo(gpI);
+
+        setTimeout(() => bgQp(qP), 2000);
+
+        const grandparent = document.querySelector(".gp")
+        const children = grandparent.querySelectorAll(".child")
+
+        cBg = (element) => element.style.backgroundColor = 'orange'
+        children.forEach(cBg);
+
+
+        console.log("GP", grandparent.children[1].children[1]);
+        const parents = Array.from(grandparent.children)
+
+        const cp2 = document.querySelector("#child1p2")
+        const c2p2 = cp2.nextElementSibling
+        const c1p2 = c2p2.previousElementSibling
+
+        const p2 = cp2.parentElement
+
+        const g = cp2.closest('.gp') //selects cloest parents upwards untill it finds a class with name "gp" & it uses css selector
+
+        p2Bg = (element) => element.style.backgroundColor = 'gray'
+
+
+        setTimeout(() => p2Bg(p2), 3000);
+
+        setInterval(() => {
+            p2Bg(p2)
+        }, 250);
+
+        setInterval(() => {
+            P.forEach(bgP)
+        }, 500);
+
+
+
+
+            // qP.forEach(bgQp);
+    </script>
+</body>
+
+</html>

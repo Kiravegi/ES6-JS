@@ -1,0 +1,13 @@
+let percentageBonus = () => 2;
+let getValue = (value=10,bonus=value*percentageBonus()) =>{
+   console.log(value); //10
+   console.log(bonus); //20
+  console.log(value+bonus); //30
+};
+
+getValue();
+
+getValue(20,20); 
+
+
+getValue(undefined,20); // value will be default selected as 10
